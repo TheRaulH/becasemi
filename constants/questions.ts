@@ -1,0 +1,215 @@
+// constants/questions.ts
+import { Question } from "../types/questionnaire"; 
+
+export const QUESTIONNAIRE: Question[] = [
+  // INFORMACIÓN ACADÉMICA
+  {
+    id: "academic-level",
+    text: "¿En qué nivel académico te encuentras actualmente?",
+    type: "single",
+    options: [
+      { value: "preuniversitario", label: "Curso Preuniversitario" },
+      { value: "psa", label: "Prueba de Suficiencia Académica (PSA)" },
+      { value: "ciencias-basicas", label: "Ciencias Básicas" },
+      { value: "carrera", label: "Carrera (Licenciatura)" },
+      { value: "tecnico-superior", label: "Técnico Universitario Superior" },
+    ],
+    required: true,
+    weight: 10,
+    category: "academic",
+  },
+  {
+    id: "current-semester",
+    text: "¿En qué semestre te encuentras? (si no estás en carrera, ingresa 1)",
+    type: "number",
+    required: true,
+    weight: 8,
+    category: "academic",
+  },
+  {
+    id: "current-gpa",
+    text: "¿Cuál es tu promedio acumulado actual? (o que proyectas alcanzar)",
+    type: "range",
+    required: true,
+    weight: 10,
+    category: "academic",
+  },
+  {
+    id: "failed-subjects",
+    text: "¿Has reprobado alguna materia en segunda instancia?",
+    type: "boolean",
+    required: true,
+    weight: 9,
+    category: "academic",
+  },
+  {
+    id: "optional-exam",
+    text: "¿Te has acogido al beneficio de Examen Optativo?",
+    type: "boolean",
+    required: true,
+    weight: 8,
+    category: "academic",
+  },
+
+  // INFORMACIÓN MILITAR/INSTITUCIONAL
+  {
+    id: "military-status",
+    text: "¿Cuál es tu estatus militar?",
+    type: "single",
+    options: [
+      { value: "civil", label: "Estudiante Civil" },
+      { value: "militar-estudiante", label: "Militar Estudiante" },
+      { value: "oficial", label: "Oficial" },
+      { value: "suboficial", label: "Suboficial" },
+      { value: "sargento", label: "Sargento" },
+      { value: "soldado", label: "Soldado" },
+      { value: "marinero", label: "Marinero" },
+    ],
+    required: true,
+    weight: 10,
+    category: "military",
+  },
+  {
+    id: "study-commission",
+    text: "¿Estás declarado en Comisión de Estudios?",
+    type: "boolean",
+    required: false,
+    weight: 9,
+    category: "military",
+  },
+
+  // INFORMACIÓN PERSONAL Y ECONÓMICA
+  {
+    id: "economic-need",
+    text: "¿Tienes necesidades económicas que dificulten el pago de colegiatura?",
+    type: "boolean",
+    required: true,
+    weight: 8,
+    category: "economic",
+  },
+  {
+    id: "has-disability",
+    text: "¿Tienes alguna discapacidad?",
+    type: "boolean",
+    required: true,
+    weight: 7,
+    category: "personal",
+  },
+  {
+    id: "is-orphan",
+    text: "¿Has perdido a tus padres?",
+    type: "boolean",
+    required: true,
+    weight: 9,
+    category: "personal",
+  },
+  {
+    id: "parent-military-deceased",
+    text: "¿Alguno de tus padres era personal militar de la EMI y falleció en funciones?",
+    type: "boolean",
+    required: true,
+    weight: 10,
+    category: "personal",
+  },
+  {
+    id: "parent-deceased-service",
+    text: "¿Alguno de tus padres era militar del Ejército y falleció en actos del servicio?",
+    type: "boolean",
+    required: true,
+    weight: 10,
+    category: "personal",
+  },
+
+  // ACTIVIDADES EXTRACURRICULARES
+  {
+    id: "sports-participation",
+    text: "¿Participas en actividades deportivas representando a la EMI?",
+    type: "single",
+    options: [
+      { value: "none", label: "No participo" },
+      { value: "local", label: "Competencias locales/asociación" },
+      { value: "departmental", label: "Competencias departamentales" },
+      { value: "national", label: "Competencias nacionales" },
+      { value: "international", label: "Competencias internacionales" },
+    ],
+    required: true,
+    weight: 6,
+    category: "activities",
+  },
+  {
+    id: "cultural-participation",
+    text: "¿Participas en actividades culturales de la EMI?",
+    type: "single",
+    options: [
+      { value: "none", label: "No participo" },
+      { value: "choir", label: "Coro" },
+      { value: "dance", label: "Danza" },
+      { value: "band", label: "Banda de Música" },
+      { value: "other", label: "Otras actividades culturales" },
+    ],
+    required: true,
+    weight: 5,
+    category: "activities",
+  },
+  {
+    id: "research-experience",
+    text: "¿Tienes experiencia en investigación o proyectos académicos?",
+    type: "boolean",
+    required: true,
+    weight: 7,
+    category: "activities",
+  },
+  {
+    id: "completed-research",
+    text: "¿Has completado algún proyecto de investigación?",
+    type: "boolean",
+    required: false,
+    weight: 8,
+    category: "activities",
+  },
+
+  // INFORMACIÓN DISCIPLINARIA
+  {
+    id: "disciplinary-points",
+    text: "¿Cuántos puntos has perdido en disciplina este semestre?",
+    type: "number",
+    required: true,
+    weight: 8,
+    category: "academic",
+  },
+
+  // INFORMACIÓN ADICIONAL
+  {
+    id: "high-school-graduate",
+    text: "¿Eres bachiller de la última gestión?",
+    type: "boolean",
+    required: true,
+    weight: 6,
+    category: "academic",
+  },
+  {
+    id: "direct-invitation",
+    text: "¿Fuiste invitado directamente por ser el mejor bachiller de tu promoción?",
+    type: "boolean",
+    required: false,
+    weight: 9,
+    category: "academic",
+  },
+  {
+    id: "olympiad-winner",
+    text: "¿Formaste parte del equipo que ganó las Olimpiadas de Ciencias Exactas?",
+    type: "boolean",
+    required: false,
+    weight: 8,
+    category: "academic",
+  },
+  {
+    id: "accident-victim",
+    text: "¿Has sido víctima de algún accidente en actos del servicio?",
+    type: "boolean",
+    required: false,
+    weight: 9,
+    category: "personal",
+  },
+];
+
