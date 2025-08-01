@@ -9,7 +9,7 @@ import { ModeToggle } from "@/components/ModeToggle";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { useRouter } from "next/navigation";
 
-export function Home() {
+export default function Home() {
   const router = useRouter();
 
   function handleStartQuiz() {
@@ -125,4 +125,4 @@ export function Home() {
   );
 }
 
-export default Home;
+// Removed duplicate export default statement
